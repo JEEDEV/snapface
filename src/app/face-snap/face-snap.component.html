@@ -4,6 +4,16 @@
 <img [src]="faceSnap.imageUrl" [alt]="faceSnap.title">
 <p>{{faceSnap.description}}</p>
 <p *ngIf="faceSnap.location"> Photo prise à {{faceSnap.location}}</p>
-<button (click)="onSnap()">{{buttonText}}</button>
-<p>🤌 {{ faceSnap.snaps }}</p>
+
+<p>
+    <button (click)="onSnap()">{{buttonText}}</button>
+  <!--
+    La directive  [ngStyle]  permet d'appliquer des styles qui dépendent de valeurs dynamiques,
+     comme un texte qui, plus il y a de snaps, devient de plus en plus vert.
+
+    La directive  [ngStyle]  prend comme argument un objet 
+    où les clés correspondent aux styles CSS à modifier, et les valeurs aux valeurs que doivent prendre ces styles.
+  -->
+    <span [ngStyle]="{color: 'rgb(0,'+ faceSnap.snaps +',0)'}">🤌 {{ faceSnap.snaps }}</span>
+</p>
 </div>
