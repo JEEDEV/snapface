@@ -1,1 +1,6 @@
 .DS_Store
+.angular
+.cli-ngcc
+__ngcc_entry_points__.json
+
+
