@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { FaceSnap } from '../models/face-snap.model';
 
 @Component({
   selector: 'app-face-snap',
@@ -6,29 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./face-snap.component.scss']
 })
 export class FaceSnapComponent implements OnInit{
-  title!:string;
-  description!:string;
-  createdDate!:Date;
-  snaps!:number;
-  imageUrl!:string;
+  @Input() faceSnap!:FaceSnap;
   buttonText!:string;
 
   ngOnInit(): void {
-    this.title = 'Archibald';
-    this.description = 'Mon meilleur ami depuis tout petit !';
-    this.createdDate = new Date();
-    this.snaps=6;
-    this.imageUrl='https://cdn.pixabay.com/photo/2015/05/31/16/03/teddy-bear-792273_1280.jpg';
-    this.buttonText='Oh Snap!'
-    throw new Error('Method not implemented.');
+    this.buttonText='Oh Snap!';
   }
 
   onSnap(){
    if(this.buttonText ==='Oh Snap!'){
-    this.snaps++;
+    this.faceSnap.snaps++;
     this.buttonText = 'Ooops, UnSnap'
    }else {
-    this.snaps--;
+    this.faceSnap.snaps--;
     this.buttonText='Oh Snap!'; 
    }
   }
