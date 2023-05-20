@@ -2,5 +2,6 @@
 .angular
 .cli-ngcc
 __ngcc_entry_points__.json
+node_modules
 
 
