@@ -21,31 +21,21 @@ qui sert justement à déclarer des styles et des classes globaux.
     font-weight: 300;
     font-size: 16px;
   }
-  button {
-    background-color: transparent;
-    box-sizing: border-box;
-    padding: 5px 10px;
-    border: none;
-    box-shadow: lightgray 3px 3px 7px;
-    margin-right: 20px;
-    outline: none;
-    font-size: 14px;
-    font-weight: 500;
-    &:active {
-      transform: translate(1px, 1px);
-      box-shadow: lightgray 0 0 5px;
-    }
+
+  span {
+    position: absolute;
+    margin-top: 5px;
+    width: 120px;
   }
 }
 
-.snapped {
-  background-color: rgba(lightgreen, 0.4);
-  color: darkgreen;
-  button {
-    box-shadow: lightgreen 3px 3px 7px;
-    color: darkgreen;
-    &:active {
-      box-shadow: lightgreen 0 0 5px;
-    }
-  }
+button {
+  box-sizing: border-box;
+  padding: 5px 20px 20px 20px;
+  border: none;
+  margin-right: 20px;
+  box-shadow: lightgray 3px 3px 3px;
+  outline: none;
+  font-size: 17px;
+  font-weight: 500;
 }

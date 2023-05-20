@@ -1,0 +1,38 @@
+<!--
+    La directive  [ngClass]  permet d'ajouter dynamiquement des classes à des éléments HTML.
+    [ngClass] prend un objet en argument où les clés sont des noms de classe CSS, 
+    et les valeurs sont les conditions selon lesquelles les classes doivent être appliquées.
+-->
+<div class="face-snap-card " [ngClass]="{snapped: buttonText ==='Ooops, UnSnap'}">
+    <h2>{{faceSnap.title  | uppercase}}</h2>
+    
+    <!--
+    DatePipe permet de formater les dates, et sans configuration fournit un formatage par défaut.
+    DatePipe fournit des configurations prédéfinies avec des noms comme  short,  longDate  ou  mediumTime
+    DatePipe permet également de personnaliser totalement le format d'affichage des dates avec des chaînes 
+    de caractères qui encodent le format souhaité: exemple ci-dessous 
+    -->
+    
+     <p>Mise en ligne {{faceSnap.createdDate  | date:'le dd/MMMM/yyyy à HH:mm'}}</p>
+    <img [src]="faceSnap.imageUrl" [alt]="faceSnap.title">
+    <p>{{faceSnap.description}} La photo est vendue à {{ 33.67 | currency: 'EUR' }} </p>
+    <p *ngIf="faceSnap.location"> Photo prise à {{faceSnap.location}}</p>
+    <!--
+      DecimalPipe et PercentPipe acceptent un argument de configuration
+      sous la forme 'chiffresMinAvantVirgule.chiffresMinAprèsVirgule-chiffresMaxAprèsVirgule' 
+    -->
+    <p> Cette photo est vendu à {{ 4346234.36 | number: '1.0-1' }}. En pourcentage, cette photo est appréciée {{ 0.3367 | percent: '1.0-1' }}</p>
+    <p>
+        
+      <button (click)="onSnap()">{{buttonText}}</button>
+    <!--
+        La directive  [ngStyle]  permet d'appliquer des styles qui dépendent de valeurs dynamiques,
+        comme un texte qui, plus il y a de snaps, devient de plus en plus vert.
+        La directive  [ngStyle]  prend comme argument un objet 
+        où les clés correspondent aux styles CSS à modifier, et les valeurs aux valeurs que doivent prendre ces styles.
+    -->
+        
+    <span [ngStyle]="{color: 'rgb(0,'+ faceSnap.snaps +',0)'}">🤌 {{ faceSnap.snaps }}</span>
+    
+    </p>
+    </div>

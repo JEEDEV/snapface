@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { FaceSnap } from "../models/face-snap.model";
-
+// Créer un service est aussi simple qu'ajouter le décorateur  @Injectable()  à une classe.
 @Injectable({
     providedIn: 'root'
 })
@@ -36,8 +36,11 @@ export class FaceSnapService{
   getAllFaceSnaps(): FaceSnap[]{
     return this.faceSnaps;
   }
-
-  snapFaceSnapById(faceSnapId:number, snapType:'snap'|'unsnap'): void{
+ 
+  //Les literal types permettent de créer rapidement des types personnalisés, 
+ //souvent utilisés pour limiter les choix pour un argument de méthode, par exemple : fileType: 'image' | 'video'
+  
+ snapFaceSnapById(faceSnapId:number, snapType:'snap'|'unsnap'): void{
     const faceSnap = this.getFaceSnapById(faceSnapId);
     snapType ==='snap'? faceSnap.snaps++ : faceSnap.snaps--;
   }

@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule} from  '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import { SingleFaceSnapComponent } from './single-face-snap/single-face-snap.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {MatIconModule} from '@angular/material/icon';
     FaceSnapComponent,
     FaceSnapListComponent,
     HeaderComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    SingleFaceSnapComponent
   ],
   imports: [
     BrowserModule,
